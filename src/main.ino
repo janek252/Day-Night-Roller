@@ -50,6 +50,14 @@ int error_counter_2_a = 0;
 int error_counter_1_b = 0;
 int error_counter_2_b = 0;
 
+void fulllowerRollerBlind();
+void fullraiseRollerBlind();
+void halfLowerRollerBlind();
+void halfRaiseRollerBlind();
+void quarterLowerRollerBlind();
+void threeQuarterLowerRollerBlind();
+void quarterRaiseRollerBlind();
+void threeQuarterRaiseRollerBlind();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Setup function
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -119,6 +127,7 @@ void loop() {
   float pressure_bmp280 = bmp280.readPressure();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // error loops
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
   float light_level_a;
   if (bh1750_a.measurementReady()) {
@@ -202,11 +211,16 @@ if (client) {
           client.print("<div style=\"border: 2px solid #999; padding: 10px; display: flex; flex-wrap: wrap; background-color: #E0E0E0;\">");
           client.print("<h1 style=\"flex-basis: 100%;\">Roller Blind Control</h1>");
 
-          client.print("<div style=\"flex-basis: 100%; display: flex; justify-content: space-between;\">");
-          client.print("<div style=\"flex-basis: 48%; background-color: #D0D0D0;\"><a href=\"/lower\"><button id=\"lowerBtn\" style=\"width: 100%;\">Lower Roller Blind</button></a></div>");
-          client.print("<div style=\"flex-basis: 48%; background-color: #D0D0D0;\"><a href=\"/raise\"><button id=\"raiseBtn\" style=\"width: 100%;\">Raise Roller Blind</button></a></div>");
-
-          client.print("</div>");
+client.print("<div style=\"flex-basis: 100%; display: flex; justify-content: space-between;\">");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/fulllower\"><button id=\"fullLowerBtn\" style=\"width: 100%;\">Full Lower</button></a></div>");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/fullraise\"><button id=\"fullRaiseBtn\" style=\"width: 100%;\">Full Raise</button></a></div>");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/halfLower\"><button id=\"halfLowerBtn\" style=\"width: 100%;\">Half Lower</button></a></div>");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/halfRaise\"><button id=\"halfRaiseBtn\" style=\"width: 100%;\">Half Raise</button></a></div>");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/quarterLower\"><button id=\"quarterLowerBtn\" style=\"width: 100%;\">1/4 Lower</button></a></div>");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/threeQuarterLower\"><button id=\"threeQuarterLowerBtn\" style=\"width: 100%;\">3/4 Lower</button></a></div>");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/quarterRaise\"><button id=\"quarterRaiseBtn\" style=\"width: 100%;\">1/4 Raise</button></a></div>");
+client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/threeQuarterRaise\"><button id=\"threeQuarterRaiseBtn\" style=\"width: 100%;\">3/4 Raise</button></a></div>");
+client.print("</div>");
 
           client.print("<h1 style=\"flex-basis: 100%;\">Motor Control</h1>");
           client.print("<div style=\"flex-basis: 100%; display: flex; justify-content: space-between;\">");
@@ -275,13 +289,30 @@ if (client) {
             tone(STP, motorSpeed);
           }
         }
-
-        if (currentLine.endsWith("GET /lower")) {
-          fulllowerRollerBlind();
-        }
-        if (currentLine.endsWith("GET /raise")) {
-          fullraiseRollerBlind();
-        }
+if (currentLine.endsWith("GET /fulllower")) {
+  fulllowerRollerBlind();
+}
+if (currentLine.endsWith("GET /fullraise")) {
+  fullraiseRollerBlind();
+}
+if (currentLine.endsWith("GET /halfLower")) {
+  halfLowerRollerBlind();
+}
+if (currentLine.endsWith("GET /halfRaise")) {
+  halfRaiseRollerBlind();
+}
+if (currentLine.endsWith("GET /quarterLower")) {
+  quarterLowerRollerBlind();
+}
+if (currentLine.endsWith("GET /threeQuarterLower")) {
+  threeQuarterLowerRollerBlind();
+}
+if (currentLine.endsWith("GET /quarterRaise")) {
+  quarterRaiseRollerBlind();
+}
+if (currentLine.endsWith("GET /threeQuarterRaise")) {
+  threeQuarterRaiseRollerBlind();
+}
 
       }
     }
@@ -310,6 +341,60 @@ void fullraiseRollerBlind() {
   motorRunning = true;
   tone(STP, motorSpeed);
   delay(20000);  // Podnieś przez 15 sekund
+  noTone(STP);
+  motorRunning = false;
+}
+
+void halfLowerRollerBlind() {
+  digitalWrite(DIR, LOW);
+  motorRunning = true;
+  tone(STP, motorSpeed);
+  delay(10000);  // Opuszcz przez 10 sekund
+  noTone(STP);
+  motorRunning = false;
+}
+
+void halfRaiseRollerBlind() {
+  digitalWrite(DIR, HIGH);
+  motorRunning = true;
+  tone(STP, motorSpeed);
+  delay(10000);  // Podnieś przez 10 sekund
+  noTone(STP);
+  motorRunning = false;
+}
+
+void quarterLowerRollerBlind() {
+  digitalWrite(DIR, LOW);
+  motorRunning = true;
+  tone(STP, motorSpeed);
+  delay(5000);  // Opuszcz przez 5 sekund
+  noTone(STP);
+  motorRunning = false;
+}
+
+void threeQuarterLowerRollerBlind() {
+  digitalWrite(DIR, LOW);
+  motorRunning = true;
+  tone(STP, motorSpeed);
+  delay(15000);  // Opuszcz przez 15 sekund
+  noTone(STP);
+  motorRunning = false;
+}
+
+void quarterRaiseRollerBlind() {
+  digitalWrite(DIR, HIGH);
+  motorRunning = true;
+  tone(STP, motorSpeed);
+  delay(5000);  // Podnieś przez 5 sekund
+  noTone(STP);
+  motorRunning = false;
+}
+
+void threeQuarterRaiseRollerBlind() {
+  digitalWrite(DIR, HIGH);
+  motorRunning = true;
+  tone(STP, motorSpeed);
+  delay(15000);  // Podnieś przez 15 sekund
   noTone(STP);
   motorRunning = false;
 }
