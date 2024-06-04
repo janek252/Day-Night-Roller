@@ -214,16 +214,16 @@ if (client) {
           client.print("<div style=\"border: 2px solid #999; padding: 10px; display: flex; flex-wrap: wrap; background-color: #E0E0E0;\">");
           client.print("<h1 style=\"flex-basis: 100%;\">Roller Blind Control</h1>");
 
-        client.print("<div style=\"flex-basis: 100%; display: flex; justify-content: space-between;\">");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/fulllower\"><button id=\"fullLowerBtn\" style=\"width: 100%;\">Full Lower</button></a></div>");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/fullraise\"><button id=\"fullRaiseBtn\" style=\"width: 100%;\">Full Raise</button></a></div>");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/halfLower\"><button id=\"halfLowerBtn\" style=\"width: 100%;\">Half Lower</button></a></div>");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/halfRaise\"><button id=\"halfRaiseBtn\" style=\"width: 100%;\">Half Raise</button></a></div>");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/quarterLower\"><button id=\"quarterLowerBtn\" style=\"width: 100%;\">1/4 Lower</button></a></div>");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/threeQuarterLower\"><button id=\"threeQuarterLowerBtn\" style=\"width: 100%;\">3/4 Lower</button></a></div>");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/quarterRaise\"><button id=\"quarterRaiseBtn\" style=\"width: 100%;\">1/4 Raise</button></a></div>");
-        client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/threeQuarterRaise\"><button id=\"threeQuarterRaiseBtn\" style=\"width: 100%;\">3/4 Raise</button></a></div>");
-        client.print("</div>");
+          client.print("<div style=\"flex-basis: 100%; display: flex; justify-content: space-between;\">");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/fulllower\"><button id=\"fullLowerBtn\" style=\"width: 100%;\">Full Lower</button></a></div>");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/fullraise\"><button id=\"fullRaiseBtn\" style=\"width: 100%;\">Full Raise</button></a></div>");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/halfLower\"><button id=\"halfLowerBtn\" style=\"width: 100%;\">Half Lower</button></a></div>");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/halfRaise\"><button id=\"halfRaiseBtn\" style=\"width: 100%;\">Half Raise</button></a></div>");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/quarterLower\"><button id=\"quarterLowerBtn\" style=\"width: 100%;\">1/4 Lower</button></a></div>");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/threeQuarterLower\"><button id=\"threeQuarterLowerBtn\" style=\"width: 100%;\">3/4 Lower</button></a></div>");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/quarterRaise\"><button id=\"quarterRaiseBtn\" style=\"width: 100%;\">1/4 Raise</button></a></div>");
+          client.print("<div style=\"flex-basis: 24%; background-color: #D0D0D0;\"><a href=\"/threeQuarterRaise\"><button id=\"threeQuarterRaiseBtn\" style=\"width: 100%;\">3/4 Raise</button></a></div>");
+          client.print("</div>");
 
           client.print("<h1 style=\"flex-basis: 100%;\">Motor Control</h1>");
           client.print("<div style=\"flex-basis: 100%; display: flex; justify-content: space-between;\">");
